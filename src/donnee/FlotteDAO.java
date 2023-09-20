@@ -43,6 +43,19 @@ public class FlotteDAO {
 	{
 		Logger.logMsg(Logger.INFO, "FlotteDAO.detaillerFlotte()");
 		Flotte flotte = new Flotte();
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			Statement requete = connexion.createStatement();
+			ResultSet curseur = requete.executeQuery("SELECT * FROM flotte WHERE id = " + id);
+			
+			curseur.next();
+			String nom = curseur.getString("nom");
+			flotte.setNom(nom);
+			flotte.setId(id);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		return flotte;
 	}
