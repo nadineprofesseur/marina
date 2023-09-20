@@ -46,6 +46,11 @@ public class ControleurMarina extends Controleur{
 	public void reagirClicFlotte(int id)
 	{		
 		Logger.logMsg(Logger.INFO, "ControleurMarina.reagirClicFlotte("+id+")");
+		
+		FlotteDAO flotteDAO = new FlotteDAO();
+		Flotte flotte = flotteDAO.detaillerFlotte(id);
+		System.out.println("Flotte : " + flotte.getNom());
+		
 		VueFlotte.getInstance().getControleur().reagirClicFlotte(id);
 	}
 }
