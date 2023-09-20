@@ -24,6 +24,7 @@ public class ControleurMarina extends Controleur{
 	{
 		Logger.logMsg(Logger.INFO, "ControleurMarina.initialiser()");
 		
+		/*
 		List<Flotte> flottes = new ArrayList<Flotte>();
 		
 		Flotte flotte1 = new Flotte("Les voiles du Nord");
@@ -33,7 +34,10 @@ public class ControleurMarina extends Controleur{
 		flottes.add(flotte1);
 		flottes.add(flotte2);
 		flottes.add(flotte3);
+		*/
 		
+		FlotteDAO flotteDAO = new FlotteDAO();
+		List<Flotte> flottes = flotteDAO.listerFlottes();
 		VueMarina.getInstance().afficherFlottes(flottes);
 	}	
 
