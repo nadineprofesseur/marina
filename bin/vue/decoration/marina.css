@@ -1,0 +1,90 @@
+.root { -fx-background-color: transparent; }
+
+#fenetre
+{
+    -fx-background-radius :  20;
+}
+
+#flotte,
+#marina
+{
+    -fx-background-color: #87b4fa;
+    -fx-background-radius: 10;
+}
+
+#marina #liste-flottes .flotte,
+#flotte #liste-bateaux .bateau
+{
+    -fx-background-color:  #3786ff;
+    -fx-background-radius:  10;
+    
+}
+#marina #liste-flottes .flotte .titre,
+#flotte #liste-bateaux .bateau .titre
+{
+    -fx-text-fill:black;
+    -fx-spacing: 50;
+}
+
+#marina #marina-details, 
+#flotte #flotte-details
+{
+    -fx-background-radius: 20;
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+}
+
+#marina #explications Button,
+#flotte #explications Button
+{
+    -fx-background-color :linear-gradient(to top left, #053175, #87b4fa);
+    -fx-background-radius :  30 30 30 30;
+    -fx-text-fill:white;
+    -fx-cursor:hand;
+}
+#marina #explications Button:hover,
+#flotte #explications Button:hover
+{
+    -fx-background-color :linear-gradient(to top left, #053175, #87b4fa);
+    -fx-background-radius :  30 30 30 30;
+}
+#marina #explications Button:pressed,
+#flotte #explications Button:pressed
+{
+    -fx-background-color: black;
+    -fx-background-radius :  30 30 30 30;
+}
+
+#menu
+{
+    -fx-background-color: #053175;
+    -fx-background-radius:  15 0 0 15;
+}
+#menu Button
+{
+    -fx-text-fill:white;
+}
+
+#menu > Pane
+{
+    -fx-background-radius: 15 0 15 15;
+}
+#menu Button
+{
+    -fx-background-color : #053175;
+    -fx-background-radius :  0 0 0 0;
+}
+#menu Button:hover
+{
+    -fx-cursor: hand;
+    -fx-fill: black;
+    -fx-background-color : #524A7B ;
+}
+#menu Button:pressed
+{
+    -fx-background-color : #2F2B43 ;
+}
+#entete
+{
+    -fx-background-radius: 20 20 0 0;
+    -fx-background-color: linear-gradient(to bottom left, #A868A0, #2D75E8);
+}
