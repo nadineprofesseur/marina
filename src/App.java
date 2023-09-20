@@ -12,12 +12,13 @@ public class App {
 	public static void main(String[] parametres) {
 		//BateauDAO bateauDAO = new BateauDAO();
 		//bateauDAO.listerBateauxParFlotte(1);
-		//FlotteDAO flotteDAO = new FlotteDAO();
+		FlotteDAO flotteDAO = new FlotteDAO();
+		flotteDAO.listerFlottes();
 		//flotteDAO.detaillerFlotte(1);
 		//Controleur.choisirVuePrincipale(VueAjouterBateau.class);
 		//Controleur.choisirVuePrincipale(VueFlotte.class);
-		Controleur.choisirVuePrincipale(VueMarina.class);
-		Fenetre.launch(Fenetre.class, parametres);	
+		//Controleur.choisirVuePrincipale(VueMarina.class);
+		//Fenetre.launch(Fenetre.class, parametres);	
 	}
 
 }

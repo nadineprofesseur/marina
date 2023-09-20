@@ -19,6 +19,22 @@ public class FlotteDAO {
 		
 		List<Flotte> flottes = new ArrayList<Flotte>();
 		
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			Statement requete = connexion.createStatement();
+			ResultSet curseur = requete.executeQuery("SELECT * FROM flotte");
+			
+			while(curseur.next())
+			{
+				String nom = curseur.getString("nom");
+				int id = curseur.getInt("id");
+				Flotte flotte = new Flotte(id, nom);
+				flottes.add(flotte);
+				//System.out.println("Flotte BDD : " + nom);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 		
 		return flottes;
 	}
