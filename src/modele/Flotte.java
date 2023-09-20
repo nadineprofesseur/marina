@@ -4,7 +4,20 @@ public class Flotte {
 	
 	protected int id;
 	protected String nom;
-	
+
+	public Flotte() {
+		super();
+	}
+
+	public Flotte(String nom) {
+		super();
+		this.nom = nom;
+	}
+	public Flotte(int id, String nom) {
+		super();
+		this.id = id;
+		this.nom = nom;
+	}
 	public int getId() {
 		return id;
 	}

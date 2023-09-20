@@ -26,9 +26,15 @@ public class ControleurMarina extends Controleur{
 		
 		List<Flotte> flottes = new ArrayList<Flotte>();
 		
-		Flotte flotte;
+		Flotte flotte1 = new Flotte("Les voiles du Nord");
+		Flotte flotte2 = new Flotte("La course de St-Malo");
+		Flotte flotte3 = new Flotte("Drakars rouges");
+
+		flottes.add(flotte1);
+		flottes.add(flotte2);
+		flottes.add(flotte3);
 		
-		
+		VueMarina.getInstance().afficherFlottes(flottes);
 	}	
 
 	// NOTIFICATION = ACTION UTILISATEUR
