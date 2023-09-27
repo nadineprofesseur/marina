@@ -44,6 +44,13 @@ public class ControleurFlotte extends Controleur
 		
 		BateauDAO bateauDAO = new BateauDAO();
 		List<Bateau> bateaux = bateauDAO.listerBateauxParFlotte(id);
+		
+		for(Bateau bateau:bateaux)
+		{
+			System.out.println("Bateau : " + bateau.getNom());
+		}
+		
+		VueFlotte.getInstance().afficherBateaux(bateaux);
 	}	
 	
 	public void reagirClicAjouterBateau()
