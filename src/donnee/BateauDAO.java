@@ -23,6 +23,7 @@ public class BateauDAO {
 		Logger.logMsg(Logger.INFO, "BateauDAO.listerBateauxParFlotte()");
 		List<Bateau> bateaux = new ArrayList<Bateau>();
 
+	/*
 		Bateau bateau1 = new Bateau();
 		bateau1.setNom("Le bleu ciel");
 		Bateau bateau2 = new Bateau();
@@ -36,6 +37,30 @@ public class BateauDAO {
 		bateaux.add(bateau2);
 		bateaux.add(bateau3);
 		bateaux.add(bateau4);
+	*/	
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			Statement requete = connexion.createStatement();
+			ResultSet curseur = requete.executeQuery("SELECT * FROM bateau WHERE flotte = " + idFlotte);
+			
+			Bateau bateau;
+			while(curseur.next())
+			{
+				int id = curseur.getInt("id");
+				String nom = curseur.getString("nom");
+				int noeud = curseur.getInt("noeud");
+				
+				bateau = new Bateau();
+				bateau.setId(id);
+				bateau.setNom(nom);
+				bateau.setNoeud(noeud);
+				bateau.setIdFlotte(idFlotte);
+				bateaux.add(bateau);
+			}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+	
 		
 		return bateaux;
 	}

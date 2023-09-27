@@ -72,7 +72,7 @@ public class VueFlotte extends Vue
 			vueTitre.setStyle("-fx-font: 24 arial;");
 			vueBateau.getChildren().add(vueTitre);
 			
-			action = new Button("�diter");
+			action = new Button("Editer");
 			action.setId(bateau.getId()+"");
 			action.setOnAction(new EventHandler<ActionEvent>() {
 				@Override

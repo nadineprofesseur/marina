@@ -4,9 +4,9 @@ public class Bateau {
 	
 	protected int id;
 	protected String nom;
-	protected double valeur;
 	protected int noeud;
 	protected int idFlotte; // a remplacer par reference vers l'objet de flotte
+	protected double valeur;
 	
 	public int getId() {
 		return id;
