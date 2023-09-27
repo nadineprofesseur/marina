@@ -47,11 +47,9 @@ public class ControleurMarina extends Controleur{
 	{		
 		Logger.logMsg(Logger.INFO, "ControleurMarina.reagirClicFlotte("+id+")");
 		
-		FlotteDAO flotteDAO = new FlotteDAO();
-		Flotte flotte = flotteDAO.detaillerFlotte(id);
-		System.out.println("Flotte : " + flotte.getNom());
-		
+		// TODO : peut-etre deplacer le code dans cette fonction de l'autre controleur et l'appeler
+		Navigateur.getInstance().afficherVue(VueFlotte.getInstance());		
 		VueFlotte.getInstance().getControleur().reagirClicFlotte(id);
-		Navigateur.getInstance().afficherVue(VueFlotte.getInstance());
+		
 	}
 }

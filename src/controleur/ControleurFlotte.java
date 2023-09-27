@@ -36,7 +36,11 @@ public class ControleurFlotte extends Controleur
 	
 	public void reagirClicFlotte(int id)
 	{		
-		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicFlotte("+id+")");		
+		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicFlotte("+id+")");	
+		FlotteDAO flotteDAO = new FlotteDAO();
+		Flotte flotte = flotteDAO.detaillerFlotte(id);
+		System.out.println("Flotte : " + flotte.getNom());	
+		VueFlotte.getInstance().afficherFlotte(flotte);
 	}	
 	
 	public void reagirClicAjouterBateau()
