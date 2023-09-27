@@ -23,6 +23,20 @@ public class BateauDAO {
 		Logger.logMsg(Logger.INFO, "BateauDAO.listerBateauxParFlotte()");
 		List<Bateau> bateaux = new ArrayList<Bateau>();
 
+		Bateau bateau1 = new Bateau();
+		bateau1.setNom("Le bleu ciel");
+		Bateau bateau2 = new Bateau();
+		bateau2.setNom("Vintage");
+		Bateau bateau3 = new Bateau();
+		bateau3.setNom("Blanche-neige");
+		Bateau bateau4 = new Bateau();
+		bateau4.setNom("Pirate du nord");
+		
+		bateaux.add(bateau1);
+		bateaux.add(bateau2);
+		bateaux.add(bateau3);
+		bateaux.add(bateau4);
+		
 		return bateaux;
 	}
 	
