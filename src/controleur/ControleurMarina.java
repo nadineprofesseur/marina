@@ -52,5 +52,6 @@ public class ControleurMarina extends Controleur{
 		System.out.println("Flotte : " + flotte.getNom());
 		
 		VueFlotte.getInstance().getControleur().reagirClicFlotte(id);
+		Navigateur.getInstance().afficherVue(VueFlotte.getInstance());
 	}
 }

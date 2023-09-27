@@ -28,6 +28,10 @@ public class ControleurFlotte extends Controleur
 		Logger.logMsg(Logger.INFO, "new ControleurFlotte()");
 	}
 	
+	public void initialiser()
+	{
+	}
+
 	// NOTIFICATION = ACTION UTILISATEUR
 	
 	public void reagirClicFlotte(int id)
