@@ -34,9 +34,11 @@ public class ControleurFlotte extends Controleur
 
 	// NOTIFICATION = ACTION UTILISATEUR
 	
+	protected int flotteActuelle = 0;
 	public void reagirClicFlotte(int id)
 	{		
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicFlotte("+id+")");	
+		this.flotteActuelle = id; // IMPORTANT = pour se souvenir de la flotte affichee dans laquelle on va ajouter
 		FlotteDAO flotteDAO = new FlotteDAO();
 		Flotte flotte = flotteDAO.detaillerFlotte(id);
 		System.out.println("Flotte : " + flotte.getNom());	
@@ -49,7 +51,6 @@ public class ControleurFlotte extends Controleur
 		{
 			System.out.println("Bateau : " + bateau.getNom());
 		}
-		
 		VueFlotte.getInstance().afficherBateaux(bateaux);
 	}	
 	
@@ -64,6 +65,7 @@ public class ControleurFlotte extends Controleur
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEnregistrerAjoutBateau()");
 		Bateau bateau = VueAjouterBateau.getInstance().lireBateau();
+		bateau.setIdFlotte(flotteActuelle); // pour ajouter le bateau dans la bonne flotte contextuelle
 		System.out.println("Le bateau lu est " + bateau.getNom() + " avec " + bateau.getNoeud() + " noeuds");
 		BateauDAO bateauDAO = new BateauDAO();
 		bateauDAO.ajouterBateau(bateau);

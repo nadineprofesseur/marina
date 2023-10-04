@@ -13,9 +13,7 @@ import modele.Bateau;
 import modele.Flotte;
 
 public class VueAjouterBateau extends Vue
-{
-	public ControleurFlotte controleur;
-	
+{	
 	protected static VueAjouterBateau instance;
 	public static VueAjouterBateau getInstance() {if(null == instance) instance = new VueAjouterBateau(); return instance;};
 	private VueAjouterBateau() {
