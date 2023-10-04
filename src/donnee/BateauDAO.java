@@ -16,7 +16,9 @@ public class BateauDAO {
 	
 	public Bateau detaillerBateau(int id)
 	{
-		return null;
+		Bateau bateau = new Bateau();
+		bateau.setNom("Test");
+		return bateau;
 	}
 	
 	public List<Bateau> listerBateauxParFlotte(int idFlotte)

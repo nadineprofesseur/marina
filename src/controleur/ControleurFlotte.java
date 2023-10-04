@@ -77,8 +77,8 @@ public class ControleurFlotte extends Controleur
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEditerBateau()");
 
-		Bateau bateau = new Bateau();
-		bateau.setNom("Test");
+		BateauDAO bateauDAO = new BateauDAO();
+		Bateau bateau = bateauDAO.detaillerBateau(id);
 		VueEditerBateau.getInstance().afficherBateau(bateau);
 		Navigateur.getInstance().afficherVue(VueEditerBateau.getInstance());
 	}
