@@ -36,18 +36,32 @@ public class VueEditerBateau extends Vue
 	
 	public Bateau lireBateau() 
 	{
-		Logger.logMsg(Logger.INFO, "VueEditerBateau.lireBateau()");
+		Logger.logMsg(Logger.INFO, "VueAjouterBateau.lireBateau()");
 		Bateau bateau = new Bateau();
+		
 		TextField champsNom = (TextField)lookup("#nom-bateau");
-		bateau.setNom(champsNom.getText());		
+		bateau.setNom(champsNom.getText());
+		
+		TextField champsValeur = (TextField)lookup("#valeur-bateau");
+		double valeur = Double.parseDouble(champsValeur.getText()); // TODO : ajouter robustesse
+		bateau.setValeur(valeur);
+		
+		TextField champsNoeuds = (TextField)lookup("#noeuds-bateau"); // TODO : ajouter robustesse
+		int noeuds = Integer.parseInt(champsNoeuds.getText());
+		bateau.setNoeud(noeuds);
+		
 		return bateau;
 	}
 	
 	public void afficherBateau(Bateau bateau)
 	{
 		Logger.logMsg(Logger.INFO, "VueEditerBateau.afficherBateau()");
-		TextField champsNom = (TextField)lookup("#nom-bateau");
+		TextField champsNom = (TextField)lookup("#nom-bateau");		
+		TextField champsValeur = (TextField)lookup("#valeur-bateau");		
+		TextField champsNoeuds = (TextField)lookup("#noeuds-bateau"); 
 		champsNom.setText(bateau.getNom());
+		champsValeur.setText(bateau.getValeur() + "");
+		champsNoeuds.setText(bateau.getNoeud() + "");
 	}
 	
 	public void afficherFlotte(Flotte flotte)

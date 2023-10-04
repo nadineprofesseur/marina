@@ -76,7 +76,10 @@ public class ControleurFlotte extends Controleur
 	public void reagirClicEditerBateau(int id)
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEditerBateau()");
-		
+
+		Bateau bateau = new Bateau();
+		bateau.setNom("Test");
+		VueEditerBateau.getInstance().afficherBateau(bateau);
 		Navigateur.getInstance().afficherVue(VueEditerBateau.getInstance());
 	}
 	public void reagirClicEnregistrerEditerBateau()
