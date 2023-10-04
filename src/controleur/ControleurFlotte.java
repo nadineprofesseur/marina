@@ -69,6 +69,7 @@ public class ControleurFlotte extends Controleur
 		System.out.println("Le bateau lu est " + bateau.getNom() + " avec " + bateau.getNoeud() + " noeuds");
 		BateauDAO bateauDAO = new BateauDAO();
 		bateauDAO.ajouterBateau(bateau);
+		Navigateur.getInstance().afficherVue(VueFlotte.getInstance()); // TODO ajouter le nouveau bateau dans la vue // pas dans devoir
 	}
 	
 	protected Bateau bateau;
