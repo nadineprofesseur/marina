@@ -73,10 +73,12 @@ public class ControleurFlotte extends Controleur
 	}
 	
 	protected Bateau bateau;
+	protected int idBateauEnEdition = 0;
 	public void reagirClicEditerBateau(int id)
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEditerBateau()");
 
+		this.idBateauEnEdition = id; // memoriser le bon bateau pour sauver
 		BateauDAO bateauDAO = new BateauDAO();
 		Bateau bateau = bateauDAO.detaillerBateau(id);
 		VueEditerBateau.getInstance().afficherBateau(bateau);
@@ -86,6 +88,7 @@ public class ControleurFlotte extends Controleur
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEnregistrerEditerBateau()");
 		Bateau bateau = VueEditerBateau.getInstance().lireBateau();
+		bateau.setId(idBateauEnEdition); // bien sauvegarder dans le bon bateau
 		System.out.println("Nouveau bateau " + bateau.getNom());
 		BateauDAO bateauDAO = new BateauDAO();
 		bateauDAO.editerBateau(bateau);
