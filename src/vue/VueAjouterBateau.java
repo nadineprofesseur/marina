@@ -48,7 +48,7 @@ public class VueAjouterBateau extends Vue
 		double valeur = Double.parseDouble(champsValeur.getText()); // TODO : ajouter robustesse
 		bateau.setValeur(valeur);
 		
-		TextField champsNoeuds = (TextField)lookup("#noeuds-bateau");
+		TextField champsNoeuds = (TextField)lookup("#noeuds-bateau"); // TODO : ajouter robustesse
 		int noeuds = Integer.parseInt(champsNoeuds.getText());
 		//System.out.println(noeuds);	
 		bateau.setNoeud(noeuds);
