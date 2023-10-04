@@ -1,6 +1,7 @@
 package donnee;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -68,6 +69,20 @@ public class BateauDAO {
 	public void ajouterBateau(Bateau bateau)
 	{
 		Logger.logMsg(Logger.INFO, "BateauDAO.ajouterBateau()");
+		String SQL_AJOUTER_BATEAU = "INSERT into bateau(nom, noeud, flotte) VALUES(?,?,?)";
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			PreparedStatement requete = connexion.prepareStatement(SQL_AJOUTER_BATEAU);
+			requete.setString(1, bateau.getNom());
+			requete.setInt(2, bateau.getNoeud());
+			requete.setInt(3, bateau.getIdFlotte());			
+			requete.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
 	}
 
 	public void editerBateau(Bateau bateau) {
