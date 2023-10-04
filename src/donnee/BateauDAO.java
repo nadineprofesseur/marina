@@ -109,6 +109,19 @@ public class BateauDAO {
 
 	public void editerBateau(Bateau bateau) {
 		Logger.logMsg(Logger.INFO, "BateauDAO.editerBateau()");
+		String SQL_EDITER_BATEAU = "UPDATE bateau SET nom=? WHERE id = ?";
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			PreparedStatement requete = connexion.prepareStatement(SQL_EDITER_BATEAU);
+			requete.setString(1, bateau.getNom());
+			//requete.setInt(2, bateau.getNoeud());
+			//requete.setInt(3, bateau.getIdFlotte());			
+			requete.setInt(2, bateau.getId());
+			requete.execute();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
 	}
 
 }

@@ -87,5 +87,7 @@ public class ControleurFlotte extends Controleur
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEnregistrerEditerBateau()");
 		Bateau bateau = VueEditerBateau.getInstance().lireBateau();
 		System.out.println("Nouveau bateau " + bateau.getNom());
+		BateauDAO bateauDAO = new BateauDAO();
+		bateauDAO.editerBateau(bateau);
 	}
 }
