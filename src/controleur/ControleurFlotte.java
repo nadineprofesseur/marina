@@ -63,6 +63,10 @@ public class ControleurFlotte extends Controleur
 	public void reagirClicEnregistrerAjoutBateau()
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicEnregistrerAjoutBateau()");
+		Bateau bateau = VueAjouterBateau.getInstance().lireBateau();
+		System.out.println("Le bateau lu est " + bateau.getNom() + " avec " + bateau.getNoeud() + " noeuds");
+		BateauDAO bateauDAO = new BateauDAO();
+		bateauDAO.ajouterBateau(bateau);
 	}
 	
 	protected Bateau bateau;

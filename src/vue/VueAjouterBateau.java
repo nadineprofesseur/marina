@@ -30,9 +30,9 @@ public class VueAjouterBateau extends Vue
 			@Override
 			public void handle(ActionEvent arg0) {
 				Logger.logMsg(Logger.INFO, "Clic sur enregistrer bateau");
-				Bateau bateau = lireBateau();
-				System.out.println("Le bateau lu est " + bateau.getNom() + " avec " + bateau.getNoeud() + " noeuds");
-				//controleur.reagirClicEnregistrerAjoutBateau();
+				
+				ControleurFlotte controleur = VueFlotte.getInstance().getControleur(); // TODO revoir architecture
+				controleur.reagirClicEnregistrerAjoutBateau();
 			}});
 	}	
 	
