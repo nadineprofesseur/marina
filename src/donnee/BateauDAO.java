@@ -17,7 +17,29 @@ public class BateauDAO {
 	public Bateau detaillerBateau(int id)
 	{
 		Bateau bateau = new Bateau();
-		bateau.setNom("Test");
+		
+		try {
+			Connection connexion = BaseDeDonnees.getInstance().getConnexion();
+			String SQL_DETAILLER_BATEAU = "SELECT * FROM bateau WHERE id = ?";
+			PreparedStatement requete = connexion.prepareStatement(SQL_DETAILLER_BATEAU);
+			requete.setInt(1, id);
+			ResultSet curseur = requete.executeQuery();
+			if(curseur.next())
+			{
+				//int id = curseur.getInt("id");
+				String nom = curseur.getString("nom");
+				int noeud = curseur.getInt("noeud");
+				int idFlotte = curseur.getInt("flotte");
+				
+				bateau.setId(id);
+				bateau.setNom(nom);
+				bateau.setNoeud(noeud);
+				bateau.setIdFlotte(idFlotte);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 		return bateau;
 	}
 	
