@@ -56,6 +56,8 @@ public class ControleurFlotte extends Controleur
 	public void reagirClicAjouterBateau()
 	{
 		Logger.logMsg(Logger.INFO, "ControleurFlotte.reagirClicAjouterBateau()");
+		VueAjouterBateau vue = VueAjouterBateau.getInstance();
+		Navigateur.getInstance().afficherVue(vue);
 	}
 	
 	public void reagirClicEnregistrerAjoutBateau()
