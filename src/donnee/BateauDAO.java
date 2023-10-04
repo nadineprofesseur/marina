@@ -105,8 +105,6 @@ public class BateauDAO {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
-		
 	}
 
 	public void editerBateau(Bateau bateau) {

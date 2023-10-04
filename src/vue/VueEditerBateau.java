@@ -30,6 +30,7 @@ public class VueEditerBateau extends Vue
 			@Override
 			public void handle(ActionEvent arg0) {
 				Logger.logMsg(Logger.INFO, "Clic sur enregistrer bateau");
+				ControleurFlotte controleur = VueFlotte.getInstance().getControleur();
 				controleur.reagirClicEnregistrerEditerBateau();
 			}});
 	}	
