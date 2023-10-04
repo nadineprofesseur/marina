@@ -30,7 +30,9 @@ public class VueAjouterBateau extends Vue
 			@Override
 			public void handle(ActionEvent arg0) {
 				Logger.logMsg(Logger.INFO, "Clic sur enregistrer bateau");
-				controleur.reagirClicEnregistrerAjoutBateau();
+				Bateau bateau = lireBateau();
+				System.out.println("Le bateau lu est " + bateau.getNom() + " avec " + bateau.getNoeud() + " noeuds");
+				//controleur.reagirClicEnregistrerAjoutBateau();
 			}});
 	}	
 	
@@ -38,11 +40,27 @@ public class VueAjouterBateau extends Vue
 	{
 		Logger.logMsg(Logger.INFO, "VueAjouterBateau.lireBateau()");
 		Bateau bateau = new Bateau();
+		
 		TextField champsNom = (TextField)lookup("#nom-bateau");
 		bateau.setNom(champsNom.getText());
 		
+		TextField champsValeur = (TextField)lookup("#valeur-bateau");
+		double valeur = Double.parseDouble(champsValeur.getText()); // TODO : ajouter robustesse
+		bateau.setValeur(valeur);
+		
+		TextField champsNoeuds = (TextField)lookup("#noeuds-bateau");
+		int noeuds = Integer.parseInt(champsNoeuds.getText());
+		//System.out.println(noeuds);	
+		bateau.setNoeud(noeuds);
+		
 		return bateau;
 	}
+	
+	/*
+                              <TextField id="nom-bateau" fx:id="nomBateau" GridPane.columnIndex="1" />
+                              <TextField id="valeur-bateau" fx:id="valeurBateau" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField id="noeuds-bateau" fx:id="noeudsBateau" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+	 * */
 	
 	public void afficherFlotte(Flotte flotte)
 	{
